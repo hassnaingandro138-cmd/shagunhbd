@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Outfit', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-handwriting: 'Caveat', cursive;
+    --font-script: 'Great Vibes', cursive;
+  }
+}
+
+.font-sans {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-handwriting {
+  font-family: 'Caveat', cursive, sans-serif;
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive, sans-serif;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(2deg);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 10px #ff6b8b) drop-shadow(0 0 20px #ffb300);
+  }
+  25% {
+    transform: scale(1.08, 0.96) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 14px #ff4081) drop-shadow(0 0 26px #ffea00);
+  }
+  50% {
+    transform: scale(0.96, 1.05) rotate(-2deg);
+    opacity: 0.88;
+    filter: drop-shadow(0 0 8px #ff6b8b) drop-shadow(0 0 16px #ffb300);
+  }
+  75% {
+    transform: scale(1.04, 1.02) rotate(1deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 16px #f50057) drop-shadow(0 0 30px #ffd600);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(244, 63, 94, 0.4), 0 0 40px rgba(236, 72, 153, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(244, 63, 94, 0.7), 0 0 65px rgba(236, 72, 153, 0.45);
+  }
+}
+
+@keyframes fallPetal {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(105vh) translateX(60px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-flicker {
+  animation: flicker 1.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Glassmorphism helpers */
+.glass-pink-dark {
+  background: rgba(24, 15, 24, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 114, 182, 0.2);
+}
+
+.glass-pink-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 114, 182, 0.35);
+}
+
+/* Print styles for the letter & card */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

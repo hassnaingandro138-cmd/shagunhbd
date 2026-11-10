@@ -1,0 +1,6 @@
+{
+  "name": "Birthday Surprise for Shagun 💖",
+  "description": "An ultra-beautiful, interactive birthday surprise and friendship memory sanctuary for my dearest bestie Shagun.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
